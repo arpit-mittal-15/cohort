@@ -1,14 +1,15 @@
-function sum(num1, num2, fnToCall){
-  let result = num1 + num2;
-  fnToCall(result)
+function square(n){
+  return n*n;
+}
+function cube(n){
+  return n*n*n;
 }
 
-function displayResult(data){
-  console.log("Result of the sum is: " + data);
+function sumOfSomething(a, b, callback){
+  const val1 = callback(a);
+  const val2 = callback(b);
+
+  console.log( val1 + val2 );
 }
 
-function displayResultPassive(data){
-  console.log("Sum's result is: " + data);
-}
-
-const ans = sum(1,2,displayResult);
+sumOfSomething(1,2,square);
