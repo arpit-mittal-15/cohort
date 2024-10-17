@@ -37,6 +37,13 @@ app.get("/heart-check", userMiddleware, (req, res) => {
   res.send("Your heart is healthy");
 });
 
+//global catches
+app.use(function(err, req, res, next){
+  res.json({
+    msg: "Sorry something is up with server."
+  })
+})
+
 app.listen(PORT, () => {
   console.log("Server is running.");
 });
