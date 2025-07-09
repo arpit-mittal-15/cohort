@@ -2,6 +2,7 @@ import { RecoilRoot, useRecoilState, useRecoilValue } from "recoil";
 import { countAtom } from "./store/atoms/count";
 
 function App() {
+  //also try selector, async atom, async selector
   return (
     <div>
         <Count />
