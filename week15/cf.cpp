@@ -6,32 +6,18 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  string expression;
-  cin >> expression;
+  int testcases;
+  cin >> testcases;
 
-  int arr[3] = {0};
+  while(testcases--){
+    int animals = 0;
+    int legs;
+    cin >> legs;
 
-  for(int i=0; i<expression.size(); i++){
-    if(expression[i] != '+'){
-      arr[expression[i]-49]++;
-    }
+    animals += legs/4;
+
+    if(legs%4 > 0) animals++;
+
+    cout << animals << '\n';
   }
-
-  int numCount = arr[0] + arr[1] + arr[2];
-
-  while(arr[0]--){
-    cout << '1';
-    if(--numCount > 0) cout << '+';
-  }
-
-  while(arr[1]--){
-    cout << '2';
-    if(--numCount > 0) cout << '+';
-  }
-
-  while(arr[2]--){
-    cout << '3';
-    if(--numCount > 0) cout << '+';
-  }
-
 }
